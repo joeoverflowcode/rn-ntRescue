@@ -15,7 +15,7 @@ export default function Index() {
       <Text className="text-center text-2xl font-nunito-bold text-black-200">
         Welcome to 
           </Text>
-        <Text className="text-center text-2xl font-nunito-bold text-primary-300">
+        <Text className="text-center text-3xl font-nunito-extrabold text-primary-300">
           North Texas Dog Rescue
       </Text>
       </View>

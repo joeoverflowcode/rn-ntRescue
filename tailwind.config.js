@@ -8,9 +8,9 @@ module.exports = {
       fontFamily: {
         nunito: ['Nunito-Regular', 'sans-serif'],
         "nunito-bold": ["Nunito-Bold", "sans-serif"],
-        "nunito-extrabold": ["Nunito-ExtraBold", "sans-serif"],
+        "nunito-extra-bold": ["Nunito-ExtraBold", "sans-serif"],
         "nunito-medium": ["Nunito-Medium", "sans-serif"],
-        "nunito-semibold": ["Nunito-SemiBold", "sans-serif"],
+        "nunito-semi-bold": ["Nunito-SemiBold", "sans-serif"],
         "nunito-light": ["Nunito-Light", "sans-serif"]
       },
       colors: {
