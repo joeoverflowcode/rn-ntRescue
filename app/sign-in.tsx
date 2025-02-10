@@ -1,14 +1,26 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity, Alert } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "@/constants/images";
 import icons from "@/constants/icons";
+import { login } from "@/lib/appwrite";
+import { useGlobalContext } from "@/lib/global-provider";
+import { Redirect } from "expo-router";
 
 
 const SignIn = () => {
+const { refetch, loading, isLoggedIn} = useGlobalContext()
+if(!loading && isLoggedIn) return <Redirect href="/" />
 
   const handleLogin = async () => {
+    const result = await login()
 
+    if(result) {
+      console.log('login successful')
+      refetch()
+    } else (
+      Alert.alert('Error', 'Failed to login')
+    )
   }
   return (
     <View className="bg-white h-full">
@@ -28,7 +40,7 @@ const SignIn = () => {
             Login with Google
           </Text>
 
-          <TouchableOpacity className="bg-white shadow-md shadow-black-100 rounded-full w-full py-4 mt-5" onPress={()=>{handleLogin}}>
+          <TouchableOpacity className="bg-white shadow-md shadow-black-100 rounded-full w-full py-4 mt-5" onPress={handleLogin}>
             <View className="flex-row items-center justify-center">
               <Image source={icons.google} className="w-6 h-6" resizeMode="contain"/>
               <Text className="text-lg font-nunito-semi-bold text-black-300 ml-2">Continue with Google</Text>
