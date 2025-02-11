@@ -46,6 +46,8 @@ if(!loading && isLoggedIn) return <Redirect href="/" />
               <Text className="text-lg font-nunito-semi-bold text-black-300 ml-2">Continue with Google</Text>
             </View>
           </TouchableOpacity>
+
+          <Text className="font-nunito-light text-base text-center mt-10">© 2025 Joe Aguado | NT Solutions</Text>
         </View>
       </ScrollView>
     </View>
