@@ -1,4 +1,10 @@
-import { Client, Account, ID, OAuthProvider, Avatars } from "react-native-appwrite";
+import {
+  Client,
+  Account,
+  ID,
+  OAuthProvider,
+  Avatars,
+} from "react-native-appwrite";
 import * as Linking from "expo-linking";
 import { openAuthSessionAsync } from "expo-web-browser";
 
@@ -14,8 +20,8 @@ client
   .setProject(config.projectId!)
   .setPlatform(config.platform!);
 
-export const avatar = new Avatars(client)  
-export const account = new Account(client)
+export const avatar = new Avatars(client);
+export const account = new Account(client);
 
 export async function login() {
   try {
@@ -52,19 +58,29 @@ export async function login() {
   }
 }
 
-export async function getCurrentUser(){
+export async function getCurrentUser() {
   try {
-    const response = await account.get()
-    if (response.$id){
-      const userAvatar = avatar.getInitials(response.name)
+    const response = await account.get();
+    if (response.$id) {
+      const userAvatar = avatar.getInitials(response.name);
       return {
         ...response,
-        avatar: userAvatar.toString()
-      }
+        avatar: userAvatar.toString(),
+      };
     }
-    return null
-  } catch(error) {
+    return null;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+export async function logout(){
+  try {
+await account.deleteSession("current")
+return true
+  } catch(error){
     console.error(error)
-    return null
+    return false
   }
 }

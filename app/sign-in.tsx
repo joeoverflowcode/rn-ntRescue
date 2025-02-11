@@ -32,7 +32,7 @@ if(!loading && isLoggedIn) return <Redirect href="/" />
             You're one step closer to {"\n"}finding your new family member
           </Text>
 
-          <Text className="text-center font-nunito-extra-bold text-3xl mt-2">
+          <Text className="text-center font-nunito-extra-bold text-3xl mt-2 text-black-300">
             North Texas Dog Rescue
           </Text>
 
