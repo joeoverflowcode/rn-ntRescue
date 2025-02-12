@@ -47,7 +47,7 @@ if(!loading && isLoggedIn) return <Redirect href="/" />
             </View>
           </TouchableOpacity>
 
-          <Text className="font-nunito-light text-base text-center mt-10">© 2025 Joe Aguado | NT Solutions</Text>
+          <Text className="font-nunito-light text-base text-center mt-12">© 2025 Joe Aguado | NT Solutions</Text>
         </View>
       </ScrollView>
     </View>
