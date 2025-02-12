@@ -2,7 +2,8 @@ import { logout } from "@/lib/appwrite";
 import { useGlobalContext } from "@/lib/global-provider";
 import { Link, Redirect } from "expo-router";
 import React from "react";
-import { Alert, Text, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TouchableOpacity, View, } from "react-native";
+
 
 export default function Index() {
   const {refetch, user, isLoggedIn} = useGlobalContext()
@@ -36,9 +37,9 @@ export default function Index() {
       </Text>
       </View>
       {!isLoggedIn && <Link href="/sign-in">Sign In</Link>}
-      <Link href="/explore">Explore</Link>
+      <Link href="/search">Search</Link>
       <Link href="/profile">Profile</Link>
-      <Link href="/dogs/99">Property</Link>
+      <Link href="/dogs/99">Dog</Link>
       <TouchableOpacity onPress={handleLogout}><Text>Logout</Text></TouchableOpacity>
       {/* <Link onPress={handleLogout}>Log Out</Link> */}
     </View>
