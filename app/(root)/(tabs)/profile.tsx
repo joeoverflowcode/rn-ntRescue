@@ -12,6 +12,7 @@ import React from "react";
 import { logout } from "@/lib/appwrite";
 import { useGlobalContext } from "@/lib/global-provider";
 import icons from "@/constants/icons";
+import { settings } from "@/constants/data";
 
 interface SettingsProp {
   onPress?: () => void;
@@ -97,6 +98,26 @@ const Profile = () => {
           icon={icons.payment
           }
           title="Adoption Fees"
+          />
+        </View>
+
+        <View className="border-primary-200 pt-5 mt-5 border-t flex flex-col">
+          {settings.slice(2).map((item, index) =>(
+            <SettingsItem
+            key={index}
+            {...item}
+
+            />
+          ))}
+        </View>
+
+        <View>
+          <SettingsItem 
+          title="Logout"
+          icon={icons.logout}
+          textStyle="text-danger"
+          showArrow={false}
+          onPress={handleLogout}
           />
         </View>
       </ScrollView>
