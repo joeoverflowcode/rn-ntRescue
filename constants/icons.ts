@@ -5,6 +5,10 @@ import profile from '@/assets/icons/profile.png'
 import favorites from '@/assets/icons/favorites.png'
 import bell from '@/assets/icons/bell.png'
 import edit from '@/assets/icons/edit.png'
+import rightArrow from '@/assets/icons/right-arrow.png'
+import user from '@/assets/icons/user.png'
+import payment from '@/assets/icons/payment.png'
+
 export default {
     
     google,
@@ -13,5 +17,8 @@ export default {
     profile,
     favorites,
     bell,
-    edit
+    edit,
+    rightArrow,
+    user,
+    payment
 }
