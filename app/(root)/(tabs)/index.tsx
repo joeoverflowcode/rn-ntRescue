@@ -1,12 +1,12 @@
 import { logout } from "@/lib/appwrite";
 import { useGlobalContext } from "@/lib/global-provider";
-import { Link, Redirect } from "expo-router";
+import { Link } from "expo-router";
 import React from "react";
 import { Alert, Text, TouchableOpacity, View, } from "react-native";
 
 
 export default function Index() {
-  const {refetch, user, isLoggedIn} = useGlobalContext()
+  const {refetch, isLoggedIn} = useGlobalContext()
   
   const handleLogout = async () => {
     const result = await logout()
