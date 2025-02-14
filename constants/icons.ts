@@ -12,6 +12,7 @@ import application from '@/assets/icons/application.png'
 import help from '@/assets/icons/help.png'
 import friends from '@/assets/icons/friends.png'
 import logout from '@/assets/icons/logout.png'
+import filter from '@/assets/icons/filter.png'
 
 export default {
     
@@ -28,5 +29,6 @@ export default {
     application,
     help,
     friends,
-    logout
+    logout,
+    filter
 }
