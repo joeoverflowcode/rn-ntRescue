@@ -5,6 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import icons from "@/constants/icons";
 import Search from "@/components/search";
 import { router } from "expo-router";
+import { FeaturedCard } from "@/components/cards";
 
 export default function Index() {
   const { user } = useGlobalContext();
@@ -44,6 +45,8 @@ export default function Index() {
         </View>
       </View>
 
+    <FeaturedCard />
+    <FeaturedCard />
     </SafeAreaView>
   );
 }
