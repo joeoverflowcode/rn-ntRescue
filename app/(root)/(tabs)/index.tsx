@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import icons from "@/constants/icons";
 import Search from "@/components/search";
 import { router } from "expo-router";
-import { FeaturedCard } from "@/components/cards";
+import { FeaturedCard, Card } from "@/components/cards";
 
 export default function Index() {
   const { user } = useGlobalContext();
@@ -34,19 +34,36 @@ export default function Index() {
 
       <View className="my-5">
         <View className="flex flex-row items-center justify-between">
-        <Text className="text-xl font-nunito-bold text-black-300">
-          New Arrivals
-        </Text>
-        <TouchableOpacity onPress={()=> router.push("/new-arrivals")}>
-          <Text className="text-base font-nunito-bold text-primary-300">
-            See All
+          <Text className="text-xl font-nunito-bold text-black-300">
+            New Arrivals
           </Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push("/new-arrivals")}>
+            <Text className="text-base font-nunito-bold text-primary-300">
+              See All
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View className="flex flex-row gap-5 mt-5">
+          <FeaturedCard />
+          <FeaturedCard />
         </View>
       </View>
 
-    <FeaturedCard />
-    <FeaturedCard />
+        <View className="flex flex-row items-center justify-between">
+          <Text className="text-xl font-nunito-bold text-black-300">
+            Dogs Looking For A Home
+          </Text>
+          <TouchableOpacity onPress={() => router.push("/new-arrivals")}>
+            <Text className="text-base font-nunito-bold text-primary-300">
+              See All
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View className="flex flex-row gap-5 mt-5">
+          <Card />
+          <Card />
+        </View>
     </SafeAreaView>
   );
 }
