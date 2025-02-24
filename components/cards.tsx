@@ -49,7 +49,7 @@ export const Card = () => {
       />
       <View className="flex- flex-col mt-2">
         <Text className="text-sm font-nunito-bold text-black-300">
-          Wrinkles
+          Pepper
         </Text>
         <Text className="text-xs font-nunito text-black-200">Male</Text>
         <View className="flex flex-row items-center justify-between mt-2">
