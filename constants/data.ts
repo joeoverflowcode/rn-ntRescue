@@ -52,3 +52,11 @@ export const settings = [
     icon: icons.friends
   },
 ];
+
+
+export const categories = [
+  {title: "All", category: 'All'},
+  {title: "Small Dogs", category: 'Small'},
+  {title: "Large Dogs", category: 'Large'},
+  {title: "Puppies", category: 'Puppy'},
+]

@@ -3,9 +3,10 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import icons from "@/constants/icons";
-import Search from "@/components/search";
+import Search from "@/components/Search";
 import { router } from "expo-router";
-import { FeaturedCard } from "@/components/cards";
+import { FeaturedCard, Card } from "@/components/Cards";
+import Filters from "@/components/Filters";
 
 export default function Index() {
   const { user } = useGlobalContext();
@@ -28,25 +29,45 @@ export default function Index() {
           </View>
           <Image source={icons.bell} className="size-6" />
         </View>
-      </View>
-
       <Search />
 
       <View className="my-5">
         <View className="flex flex-row items-center justify-between">
-        <Text className="text-xl font-nunito-bold text-black-300">
-          New Arrivals
-        </Text>
-        <TouchableOpacity onPress={()=> router.push("/new-arrivals")}>
-          <Text className="text-base font-nunito-bold text-primary-300">
-            See All
+          <Text className="text-xl font-nunito-bold text-black-300">
+            New Arrivals
           </Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push("/new-arrivals")}>
+            <Text className="text-base font-nunito-bold text-primary-300">
+              See All
+            </Text>
+          </TouchableOpacity>
         </View>
+
+        <View className="flex flex-row gap-5 mt-5">
+          <FeaturedCard />
+          <FeaturedCard />
+        </View>
+        </View>
+
+        <View className="flex flex-row items-center justify-between">
+          <Text className="text-xl font-nunito-bold text-black-300">
+            Dogs Looking For A Home
+          </Text>
+          <TouchableOpacity onPress={() => router.push("/new-arrivals")}>
+            <Text className="text-base font-nunito-bold text-primary-300">
+              See All
+            </Text>
+          </TouchableOpacity>
+        </View>
+      
+      <Filters />
+      
+        <View className="flex flex-row gap-5 mt-5">
+          <Card />
+          <Card />
+      </View>
       </View>
 
-    <FeaturedCard />
-    <FeaturedCard />
     </SafeAreaView>
   );
 }
